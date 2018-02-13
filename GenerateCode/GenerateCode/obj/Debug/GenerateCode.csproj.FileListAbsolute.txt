@@ -1,0 +1,23 @@
+D:\BobsonJuan\T STAR工作內容\PPP\tool\GenerateCode\GenerateCode\GenerateCode\bin\Debug\GenerateCode.exe.config
+D:\BobsonJuan\T STAR工作內容\PPP\tool\GenerateCode\GenerateCode\GenerateCode\bin\Debug\GenerateCode.exe
+D:\BobsonJuan\T STAR工作內容\PPP\tool\GenerateCode\GenerateCode\GenerateCode\bin\Debug\GenerateCode.pdb
+D:\BobsonJuan\T STAR工作內容\PPP\tool\GenerateCode\GenerateCode\GenerateCode\bin\Debug\Dapper.dll
+D:\BobsonJuan\T STAR工作內容\PPP\tool\GenerateCode\GenerateCode\GenerateCode\obj\Debug\GenerateCode.csprojResolveAssemblyReference.cache
+D:\BobsonJuan\T STAR工作內容\PPP\tool\GenerateCode\GenerateCode\GenerateCode\obj\Debug\GenerateCode.GeneratePPPWebAPI.resources
+D:\BobsonJuan\T STAR工作內容\PPP\tool\GenerateCode\GenerateCode\GenerateCode\obj\Debug\GenerateCode.Properties.Resources.resources
+D:\BobsonJuan\T STAR工作內容\PPP\tool\GenerateCode\GenerateCode\GenerateCode\obj\Debug\GenerateCode.csproj.GenerateResource.Cache
+D:\BobsonJuan\T STAR工作內容\PPP\tool\GenerateCode\GenerateCode\GenerateCode\obj\Debug\GenerateCode.exe
+D:\BobsonJuan\T STAR工作內容\PPP\tool\GenerateCode\GenerateCode\GenerateCode\obj\Debug\GenerateCode.pdb
+D:\PPP\共用文件\系統設計\tool\GenerateCode\GenerateCode\bin\Debug\GenerateCode.exe.config
+D:\PPP\共用文件\系統設計\tool\GenerateCode\GenerateCode\obj\Debug\GenerateCode.exe
+D:\PPP\共用文件\系統設計\tool\GenerateCode\GenerateCode\obj\Debug\GenerateCode.pdb
+D:\PPP\共用文件\系統設計\tool\GenerateCode\GenerateCode\bin\Debug\GenerateCode.exe
+D:\PPP\共用文件\系統設計\tool\GenerateCode\GenerateCode\bin\Debug\GenerateCode.pdb
+D:\PPP\共用文件\系統設計\tool\GenerateCode\GenerateCode\bin\Debug\Dapper.dll
+D:\PPP\共用文件\系統設計\tool\GenerateCode\GenerateCode\obj\Debug\GenerateCode.csprojResolveAssemblyReference.cache
+D:\PPP\共用文件\系統設計\tool\GenerateCode\GenerateCode\obj\Debug\GenerateCode.GeneratePPPWebAPI.resources
+D:\PPP\共用文件\系統設計\tool\GenerateCode\GenerateCode\obj\Debug\GenerateCode.Properties.Resources.resources
+D:\PPP\共用文件\系統設計\tool\GenerateCode\GenerateCode\obj\Debug\GenerateCode.csproj.GenerateResource.Cache
+C:\TStart\Git\ppp\GenerateCode\GenerateCode\bin\Debug\GenerateCode.exe.config
+C:\TStart\Git\ppp\GenerateCode\GenerateCode\obj\Debug\GenerateCode.exe
+C:\TStart\Git\ppp\GenerateCode\GenerateCode\obj\Debug\GenerateCode.pdb

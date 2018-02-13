@@ -1,0 +1,101 @@
+using System;																																						
+using System.Collections.Generic;																																	 
+using System.Linq;																																					 
+using System.Net;																																					 
+using System.Net.Http;																																				 
+using System.Web.Http;																																				 
+using PPPWEBAPI.Extensions;																																			 
+using PPPWEBAPI.Models.ViewModels.ActorSetting;																																 
+using PPPWEBAPI.Models.ViewModels;																																	 
+using PPPWEBAPI.Services;																																			 
+using PPPWEBAPI.Services.Interfaces;																																 
+using PPPWEBAPI.Utilities.Exceptions;																																 
+using PPPWEBAPI.Utilities;																																			 
+																																									 
+namespace PPPWEBAPI.Controllers.ActorSetting																																	 
+{																																									 
+    public partial class ActorSettingController : _BaseController																											 
+    {																																								 
+        [ApiJwtAuthActionFilter]														
+        [System.Web.Http.Route("Api/ActorSetting/Detail")]													  
+        [System.Web.Http.HttpPost]																																	 
+        public bool Detail(DetailViewModel detail)																					 
+        {																																							 
+            #region 參數宣告																																		 
+            bool result = false;																								 
+            IActorSettingService actorSettingService = new ActorSettingService();																												 
+            _BaseDetailRequestViewModel.EnumActiveType enumActiveType;																								 
+            #endregion																																				 
+																																									 
+            #region 流程																																			   
+																																									 
+            if (!_authState.IsAuth) { throw new Exception(_authState.AuthDescription);}																				 
+																																									 
+            // 參數驗證																																				 
+            VerifyParams(detail);																															 
+																																									 
+            try																																						 
+            {																																						 
+                enumActiveType = detail.ActiveType.ConvertToEnum<_BaseDetailRequestViewModel.EnumActiveType>();												 
+                VerifyActiveType(enumActiveType, detail);																								 
+																																									 
+                //處理新增/編輯/刪除資料																										 
+                switch (enumActiveType)										
+                {															
+                    case _BaseDetailRequestViewModel.EnumActiveType.ADD:	
+                        actorSettingService.AddDetail(detail);		
+                        result = true;												
+                        break;												
+                    case _BaseDetailRequestViewModel.EnumActiveType.EDIT:	
+                        actorSettingService.EditDetail(detail);		
+                        result = true;												
+                        break;												
+                    case _BaseDetailRequestViewModel.EnumActiveType.DELETE:	
+                        actorSettingService.DeleteDetail(detail);		
+                        result = true;												
+                        break;												
+                }															
+            }																																						 
+            catch (Exception ex)																																	 
+            {																																						 
+                throw ex;																																			 
+            }																																						 
+																																									 
+            #endregion																																				 
+																																									 
+            return result;																																		 
+        }																																							 
+																																									 
+        private void VerifyParams(DetailViewModel detail)																								 
+        {																																							 
+            #region 參數宣告																																		 
+																																									 
+            #endregion																																				 
+																																									 
+            #region 流程																																			   
+																																									 
+            //處理欄位驗證																																		   
+			//檢核沒傳主Key時, 直接throw new Exception("未傳入主要查詢條件")																						
+																																									 
+            #endregion																																				 
+        }																																							 
+																																									 
+        private bool VerifyActiveType(_BaseDetailRequestViewModel.EnumActiveType enumActiveType, DetailViewModel Detail)								 
+        {																																							 
+																																									 
+            #region 參數宣告																																		 
+            #endregion																																				 
+																																									 
+            #region 流程處理																																		 
+																																									 
+            if (enumActiveType.Equals(_BaseDetailRequestViewModel.EnumActiveType.EDIT) || enumActiveType.Equals(_BaseDetailRequestViewModel.EnumActiveType.DELETE))																				 
+            {																																						 
+				//額外處理各功能有關初始化明細頁時, 與增改查有關的驗證																								
+            }																																						 
+																																									 
+            return true;																																			 
+            #endregion																																				 
+        }																																							 
+    }																																								 
+}																																									 
+																																									 

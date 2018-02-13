@@ -1,0 +1,88 @@
+<p class="R_title">																						
+    <img src="../../../assets/images/title.png" /> 當前頁: {{_pageName}}                                   
+</p>                                                                                                        
+<table class="tablea">                                                                                    
+    <tbody>                                                                                                 
+        <tr class="tra">                                                                                  
+            <th colspan="4">&nbsp;</th>                                                                   
+        </tr>                                                                                               
+        <tr class="trb">                                                                                  
+            <th>Input 搜尋條件1</th>                                                                        
+            <td>                                                                                            
+                <input [(ngModel)]="" />                                                                  
+            </td>                                                                                           
+            <th>Select 搜尋條件2</th>                                                                       
+            <td>                                                                                            
+                <select id="search_level" [(ngModel)]="指定回填的ngModel Property">                     
+                    <option *ngFor="let {object Name} of _search_info.{選單Property}"                      
+                    value="{{值}}">{{顯示名稱}}</option>                                                  
+                </select>                                                                                   
+            </td>                                                                                           
+        </tr>                                                                                               
+    </tbody>                                                                                                
+</table>                                                                                                    
+<span class="spabut">                                                                                     
+    <!-- condition to for each para -->                                                                     
+    <button id="btnSearch" class="butt_b" (click)="SearchList()">查詢</button>
+    < button class="butt_b" (click)="Reset()">重置</button>
+    <button id="btnAdd" class="butt_b" (click)="AddDetail()">新增</button>
+</span>                                                                                                     
+<br />                                                                                                      
+<div style="text-align: center;" *ngIf ="null != _search_list && _search_list.SearchItemList.length <= 0">
+    <span class="textcolor_red">查無任何資料</span>                                                       
+</div>                                                                                                      
+<table class="tableb" *ngIf="null != _search_list && _search_list.SearchItemList.length > 0" #listTable>  
+    <tbody>                                                                                                 
+        <tr class="tra">                                                                                  
+            <th>操作</th>                                                                                   
+            <th>顯示欄位1</th>                                                                              
+            <th>顯示欄位2</th>                                                                              
+            <th>最後編輯人員</th>                                                                           
+            <th>最後編輯日期/時間</th>                                                                      
+        </tr>                                                                                               
+        <tr *ngFor="let data of search_list.SearchItemList">                                              
+            <td>
+                <button id="btnEdit" (click)="EditDetail(data)">編輯</button>
+                <button id="btnView" (click)="ViewDetail(data)">檢視</button>
+                <button id="btnDelete" (click)="DeleteDetail(data)">刪除</button>
+            </td>
+            <td>{{data.Property1}}</td>                                                                     
+            <td>{{data.Property2}}</td>                                                                     
+            <td>{{data.UpdateUserName}}</td>                                                                
+            <td>{{data.UpdateDate | date:'yyyy-MM-dd HH:mm:ss'}}</td>                                       
+        </tr>                                                                                               
+    </tbody>                                                                                                
+</table>                                                                                                    
+<div class="pagination_div"> 
+    <div class="pagination_left"> 
+      <span *ngIf="null != _search_list && _search_list.Page != undefined" class="pagination">
+        第{{_search_list.Page.PageIndex}}/{{_search_list.Page.GetTotalPageCount}}頁 共{{_search_list.Page.TotalCount}}筆 到
+        <input [(ngModel)]="_search_list.Page.PageIndex" />頁
+      </span>
+    </div>
+    <div class="pagination_center">
+      <ngb-pagination *ngIf="null != _search_list && _search_list.Page != undefined" [maxSize]="_page_btn_maxSize" [collectionSize]="_search_list.Page.TotalCount" 
+        [pageSize]="_search_list.Page.PageSize" [(page)]="_search_list.Page.PageIndex" (pageChange)="Paging(_search_list.Page.PageSize,_search_list.Page.PageIndex)"> 
+      </ngb-pagination> 
+    </div> 
+    <div class="pagination_right"> 
+      <span class="pagination" *ngIf="null != _search_list && _search_list.Page != undefined"> 
+        每頁顯示 
+        <select [(ngModel)]="_search_info.Page.PageSize" (change)="Paging($event.target.value, 1)"> 
+          <option value="3">3</option> 
+          <option value="5">5</option> 
+          <option value="10">10</option> 
+          <option value="15">15</option> 
+          <option value="20">20</option> 
+          <option value="30">30</option> 
+          <option value="40">40</option> 
+          <option value="50">50</option> 
+          <option value="60">70</option> 
+          <option value="80">80</option> 
+          <option value="90">90</option> 
+          <option value="100">100</option> 
+        </select> 
+        筆 
+      </span> 
+    </div> 
+  </div> 

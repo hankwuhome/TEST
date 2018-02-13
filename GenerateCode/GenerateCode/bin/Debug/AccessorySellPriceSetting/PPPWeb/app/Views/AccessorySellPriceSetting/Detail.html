@@ -1,0 +1,29 @@
+<p class="R_title">																					
+    <img src="../../../assets/images/title.png" /> 當前頁: {{_pageName}}                              
+</p>                                                                                                    
+<table class="tablea" >                                                                               
+    <tbody>                                                                                             
+        <tr class="tra">                                                                              
+            <th colspan="4">&nbsp;</th>                                                               
+        </tr>                                                                                           
+        <tr class="trb">                                                                              
+            <th><span class="textcolor_red">*</span>input 明細欄位1</th>                              
+            <td>                                                                                        
+                <input [(ngModel)]="_detail_model_for_add.欄位1"                                      
+                maxlength="60" pattern="[0-9]+" trim="blur"  />                                   
+                <span class="textcolor_red">{{_detail_model_for_check.欄位1}}</span>                  
+            </td>                                                                                       
+            <th><span class="textcolor_red">*</span>input 明細欄位2</th>                              
+            <td>                                                                                        
+                <input [(ngModel)]="_detail_model_for_add.欄位2" trim="blur" />                     
+                <span class="textcolor_red">{{_detail_model_for_check.欄位2}}</span>                  
+            </td>                                                                                       
+        </tr>                                                                                           
+    </tbody>                                                                                            
+</table>                                                                                                
+<span class="spabut" >                                             
+    <!-- condition to for each para -->                                                                 
+    <button id="btnSave" class="butt_b" (click)="saveDetail(_detail_model_for_add)">存檔</button> 
+	<button id="btnBackToSearchList" class="butt_b" (click)="backToSearchList()">回列表</button>  
+</span>                                                                                                 
+<br />                                                                                                  

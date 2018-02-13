@@ -1,0 +1,54 @@
+<p class="R_title">																						
+    <img src="../../../assets/images/title.png" /> 當前頁: {{_pageName}}                                   
+</p>                                                                                                        
+<table class="tablea">                                                                                    
+    <tbody>                                                                                                 
+        <tr class="tra">                                                                                  
+            <th colspan="4">&nbsp;</th>                                                                   
+        </tr>                                                                                               
+        <tr class="trb">                                                                                  
+            <th>Input 搜尋條件1</th>                                                                        
+            <td>                                                                                            
+                <input [(ngModel)]="" />                                                                  
+            </td>                                                                                           
+            <th>Select 搜尋條件2</th>                                                                       
+            <td>                                                                                            
+                <select id="search_level" [(ngModel)]="指定回填的ngModel Property">                     
+                    <option *ngFor="let {object Name} of _search_info.{選單Property}"                      
+                    value="{{值}}">{{顯示名稱}}</option>                                                  
+                </select>                                                                                   
+            </td>                                                                                           
+        </tr>                                                                                               
+    </tbody>                                                                                                
+</table>                                                                                                    
+<span class="spabut">                                                                                     
+    <!-- condition to for each para -->                                                                     
+    <button id="btnSearch" class="butt_b" (click)="SearchList()">查詢</button>
+    < button class="butt_b" (click)="Reset()">重置</button>
+</span>                                                                                                     
+<br />                                                                                                      
+<div style="text-align: center;" *ngIf ="null != _search_list && _search_list.SearchItemList.length <= 0">
+    <span class="textcolor_red">查無任何資料</span>                                                       
+</div>                                                                                                      
+<table class="tableb" *ngIf="null != _search_list && _search_list.SearchItemList.length > 0" #listTable>  
+    <tbody>                                                                                                 
+        <tr class="tra">                                                                                  
+            <th>操作</th>                                                                                   
+            <th>顯示欄位1</th>                                                                              
+            <th>顯示欄位2</th>                                                                              
+            <th>最後編輯人員</th>                                                                           
+            <th>最後編輯日期/時間</th>                                                                      
+        </tr>                                                                                               
+        <tr *ngFor="let data of search_list.SearchItemList">                                              
+            <td>
+                <button id="btnEdit" (click)="EditDetail(data)">編輯</button>
+                <button id="btnView" (click)="ViewDetail(data)">檢視</button>
+                <button id="btnDelete" (click)="DeleteDetail(data)">刪除</button>
+            </td>
+            <td>{{data.Property1}}</td>                                                                     
+            <td>{{data.Property2}}</td>                                                                     
+            <td>{{data.UpdateUserName}}</td>                                                                
+            <td>{{data.UpdateDate | date:'yyyy-MM-dd HH:mm:ss'}}</td>                                       
+        </tr>                                                                                               
+    </tbody>                                                                                                
+</table>                                                                                                    
